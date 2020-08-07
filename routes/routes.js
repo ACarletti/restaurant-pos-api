@@ -37,8 +37,8 @@ router.get('/orders/:id', (req, res, next) => {
     if (err) {
       res.status(400).send({'error': err})
     }
-    if (result === undefined || result.length === 0) {
-      res.status(400).send({'error':'No orders were found''})
+    if (result === undefined || result == null ||result.length === 0) {
+      res.status(400).send({'error':'No orders were found'})
     } else {
       res.status(200).send(result)
     }
@@ -53,7 +53,7 @@ router.get('/items/:id', (req, res, next) => {
       res.status(400).send({'error': err})
     }
     if (result === undefined || result.length === 0) {
-      res.status(400).send({'error':'No items were found''})
+      res.status(400).send({'error':'No items were found'})
     } else {
       res.status(200).send(result)
     }

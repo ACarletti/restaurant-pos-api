@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 
 const dbName = process.env.NODE_ENV === 'dev' ? 'database-test' : 'database' 
-const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${dbName}:27017?authMechanism=SCRAM-SHA-1&authSource=admin`
+const url = "mongodb://devuser:devuser@127.0.0.1:27017/?gssapiServiceName=mongodb"
 const options = {
   useNewUrlParser: true, 
   reconnectTries: 60, 
